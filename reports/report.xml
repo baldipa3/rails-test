@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="rspec" tests="29" skipped="3" failures="15" errors="0" time="0.325527" timestamp="2022-12-12T23:43:18-03:00" hostname="Pablos-MacBook-Air.local">
+<properties>
+<property name="seed" value="9393"/>
+</properties>
+<testcase classname="spec.requests.weather_en_spec" name="WeatherControllerSpec english locale clouds when parameter &quot;clouds&quot; is passed when clouds percentage is less or equal than 70 returns &quot;Partially cloudy&quot;" file="./spec/requests/weather_en_spec.rb" time="0.041894"></testcase>
+<testcase classname="spec.requests.weather_en_spec" name="WeatherControllerSpec english locale clouds when parameter &quot;clouds&quot; is passed when clouds percentage is more than 70 returns &quot;Cloudy&quot;" file="./spec/requests/weather_en_spec.rb" time="0.008176"></testcase>
+<testcase classname="spec.requests.weather_en_spec" name="WeatherControllerSpec english locale clouds when parameter &quot;clouds&quot; is passed when clouds percentage is less or equal than 10 returns &quot;Clear weather&quot;" file="./spec/requests/weather_en_spec.rb" time="0.009795"></testcase>
+<testcase classname="spec.requests.weather_en_spec" name="WeatherControllerSpec english locale clouds when parameter &quot;clouds&quot; is not passed returns 422" file="./spec/requests/weather_en_spec.rb" time="0.007194"><failure message="SQLite3::ConstraintException: NOT NULL constraint failed: clouds.clouds" type="ActiveRecord::NotNullViolation">Failure/Error: @clouds = Cloud.create(clouds_params)
+
+ActiveRecord::NotNullViolation:
+  SQLite3::ConstraintException: NOT NULL constraint failed: clouds.clouds
+./app/controllers/weather_controller.rb:14:in `clouds&apos;
+./spec/requests/weather_en_spec.rb:393:in `block (5 levels) in &lt;main&gt;&apos;
+------------------
+--- Caused by: ---
+SQLite3::ConstraintException:
+  NOT NULL constraint failed: clouds.clouds
+  ./app/controllers/weather_controller.rb:14:in `clouds&apos;</failure></testcase>
+<testcase classname="spec.requests.weather_en_spec" name="WeatherControllerSpec english locale wind when parameter &quot;wind_speed&quot; is passed when wind speed is less than 20 returns &quot;Windy&quot;" file="./spec/requests/weather_en_spec.rb" time="0.013969"><failure message="Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like &quot;redirect_to(...) and return&quot;." type="AbstractController::DoubleRenderError">Failure/Error: render json: wind_response
+
+AbstractController::DoubleRenderError:
+  Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like &quot;redirect_to(...) and return&quot;.
+./app/controllers/weather_controller.rb:24:in `wind&apos;
+./spec/requests/weather_en_spec.rb:211:in `block (6 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.weather_en_spec" name="WeatherControllerSpec english locale wind when parameter &quot;wind_speed&quot; is passed when wind speed is less than 3 returns &quot;No wind&quot;" file="./spec/requests/weather_en_spec.rb" time="0.009595"><failure message="Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like &quot;redirect_to(...) and return&quot;." type="AbstractController::DoubleRenderError">Failure/Error: render json: wind_response
+
+AbstractController::DoubleRenderError:
+  Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like &quot;redirect_to(...) and return&quot;.
+./app/controllers/weather_controller.rb:24:in `wind&apos;
+./spec/requests/weather_en_spec.rb:151:in `block (6 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.weather_en_spec" name="WeatherControllerSpec english locale wind when parameter &quot;wind_speed&quot; is passed when wind speed is more or equal than 20 returns &quot;Very strong wind&quot;" file="./spec/requests/weather_en_spec.rb" time="0.007886"><failure message="Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like &quot;redirect_to(...) and return&quot;." type="AbstractController::DoubleRenderError">Failure/Error: render json: wind_response
+
+AbstractController::DoubleRenderError:
+  Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like &quot;redirect_to(...) and return&quot;.
+./app/controllers/weather_controller.rb:24:in `wind&apos;
+./spec/requests/weather_en_spec.rb:241:in `block (6 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.weather_en_spec" name="WeatherControllerSpec english locale wind when parameter &quot;wind_speed&quot; is passed when wind speed is less than 8 returns &quot;Light breeze&quot;" file="./spec/requests/weather_en_spec.rb" time="0.008890"><failure message="Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like &quot;redirect_to(...) and return&quot;." type="AbstractController::DoubleRenderError">Failure/Error: render json: wind_response
+
+AbstractController::DoubleRenderError:
+  Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like &quot;redirect_to(...) and return&quot;.
+./app/controllers/weather_controller.rb:24:in `wind&apos;
+./spec/requests/weather_en_spec.rb:181:in `block (6 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.weather_en_spec" name="WeatherControllerSpec english locale wind when parameter &quot;wind_speed&quot; is not passed returns 422" file="./spec/requests/weather_en_spec.rb" time="0.007946"><failure message="SQLite3::ConstraintException: NOT NULL constraint failed: winds.wind_speed" type="ActiveRecord::NotNullViolation">Failure/Error: @wind = Wind.create(wind_params)
+
+ActiveRecord::NotNullViolation:
+  SQLite3::ConstraintException: NOT NULL constraint failed: winds.wind_speed
+./app/controllers/weather_controller.rb:22:in `wind&apos;
+./spec/requests/weather_en_spec.rb:272:in `block (5 levels) in &lt;main&gt;&apos;
+------------------
+--- Caused by: ---
+SQLite3::ConstraintException:
+  NOT NULL constraint failed: winds.wind_speed
+  ./app/controllers/weather_controller.rb:22:in `wind&apos;</failure></testcase>
+<testcase classname="spec.requests.weather_en_spec" name="WeatherControllerSpec english locale temperature when parameter &quot;degrees&quot; is not passed returns 422" file="./spec/requests/weather_en_spec.rb" time="0.013637"><failure message="SQLite3::ConstraintException: NOT NULL constraint failed: temperatures.degrees" type="ActiveRecord::NotNullViolation">Failure/Error: @temperature = Temperature.create(temperature_params)
+
+ActiveRecord::NotNullViolation:
+  SQLite3::ConstraintException: NOT NULL constraint failed: temperatures.degrees
+./app/controllers/weather_controller.rb:6:in `temperature&apos;
+./spec/requests/weather_en_spec.rb:121:in `block (5 levels) in &lt;main&gt;&apos;
+------------------
+--- Caused by: ---
+SQLite3::ConstraintException:
+  NOT NULL constraint failed: temperatures.degrees
+  ./app/controllers/weather_controller.rb:6:in `temperature&apos;</failure></testcase>
+<testcase classname="spec.requests.weather_en_spec" name="WeatherControllerSpec english locale temperature when parameter &quot;degrees&quot; is passed when degrees is below zero returns below zero text" file="./spec/requests/weather_en_spec.rb" time="0.018652"><failure message="
+expected: {&quot;description&quot;=&gt;&quot;10 degrees Celsius below zero&quot;}
+     got: {&quot;description&quot;=&gt;&quot;-10 degrees Celsius below zero&quot;}
+
+(compared using ==)
+
+Diff:
+@@ -1,2 +1,2 @@
+-&quot;description&quot; =&gt; &quot;10 degrees Celsius below zero&quot;,
++&quot;description&quot; =&gt; &quot;-10 degrees Celsius below zero&quot;,
+" type="RSpec::Expectations::ExpectationNotMetError">Failure/Error: expect(JSON.parse(response.body)).to eq(expected.stringify_keys)
+
+  expected: {&quot;description&quot;=&gt;&quot;10 degrees Celsius below zero&quot;}
+       got: {&quot;description&quot;=&gt;&quot;-10 degrees Celsius below zero&quot;}
+
+  (compared using ==)
+
+  Diff:
+  @@ -1,2 +1,2 @@
+  -&quot;description&quot; =&gt; &quot;10 degrees Celsius below zero&quot;,
+  +&quot;description&quot; =&gt; &quot;-10 degrees Celsius below zero&quot;,
+  
+./spec/requests/weather_en_spec.rb:34:in `block (6 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.weather_en_spec" name="WeatherControllerSpec english locale temperature when parameter &quot;degrees&quot; is passed when degrees is zero returns above zero text" file="./spec/requests/weather_en_spec.rb" time="0.009952"></testcase>
+<testcase classname="spec.requests.weather_en_spec" name="WeatherControllerSpec english locale temperature when parameter &quot;degrees&quot; is passed when degrees is above zero returns above zero text" file="./spec/requests/weather_en_spec.rb" time="0.010797"></testcase>
+<testcase classname="spec.requests.weather_es_spec" name="WeatherControllerSpec spanish locale wind when parameter &quot;wind_speed&quot; is passed when wind speed is more or equal than 20 returns &quot;Very strong wind&quot; in Spanish" file="./spec/requests/weather_es_spec.rb" time="0.010134"><failure message="Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like &quot;redirect_to(...) and return&quot;." type="AbstractController::DoubleRenderError">Failure/Error: render json: wind_response
+
+AbstractController::DoubleRenderError:
+  Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like &quot;redirect_to(...) and return&quot;.
+./app/controllers/weather_controller.rb:24:in `wind&apos;
+./spec/requests/weather_es_spec.rb:213:in `block (6 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.weather_es_spec" name="WeatherControllerSpec spanish locale wind when parameter &quot;wind_speed&quot; is passed when wind speed is less than 3 returns &quot;No wind&quot; in Spanish" file="./spec/requests/weather_es_spec.rb" time="0.011709"><failure message="Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like &quot;redirect_to(...) and return&quot;." type="AbstractController::DoubleRenderError">Failure/Error: render json: wind_response
+
+AbstractController::DoubleRenderError:
+  Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like &quot;redirect_to(...) and return&quot;.
+./app/controllers/weather_controller.rb:24:in `wind&apos;
+./spec/requests/weather_es_spec.rb:123:in `block (6 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.weather_es_spec" name="WeatherControllerSpec spanish locale wind when parameter &quot;wind_speed&quot; is passed when wind speed is less than 8 returns &quot;Light breeze&quot; in Spanish" file="./spec/requests/weather_es_spec.rb" time="0.013097"><failure message="Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like &quot;redirect_to(...) and return&quot;." type="AbstractController::DoubleRenderError">Failure/Error: render json: wind_response
+
+AbstractController::DoubleRenderError:
+  Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like &quot;redirect_to(...) and return&quot;.
+./app/controllers/weather_controller.rb:24:in `wind&apos;
+./spec/requests/weather_es_spec.rb:153:in `block (6 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.weather_es_spec" name="WeatherControllerSpec spanish locale wind when parameter &quot;wind_speed&quot; is passed when wind speed is less than 20 returns &quot;Windy&quot; in Spanish" file="./spec/requests/weather_es_spec.rb" time="0.012940"><failure message="Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like &quot;redirect_to(...) and return&quot;." type="AbstractController::DoubleRenderError">Failure/Error: render json: wind_response
+
+AbstractController::DoubleRenderError:
+  Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like &quot;redirect_to(...) and return&quot;.
+./app/controllers/weather_controller.rb:24:in `wind&apos;
+./spec/requests/weather_es_spec.rb:183:in `block (6 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.weather_es_spec" name="WeatherControllerSpec spanish locale clouds when parameter &quot;clouds&quot; is passed when clouds percentage is less or equal than 70 returns &quot;Partially cloudy&quot; in Spanish" file="./spec/requests/weather_es_spec.rb" time="0.009196"></testcase>
+<testcase classname="spec.requests.weather_es_spec" name="WeatherControllerSpec spanish locale clouds when parameter &quot;clouds&quot; is passed when clouds percentage is more than 70 returns &quot;Cloudy&quot; in Spanish" file="./spec/requests/weather_es_spec.rb" time="0.008947"></testcase>
+<testcase classname="spec.requests.weather_es_spec" name="WeatherControllerSpec spanish locale clouds when parameter &quot;clouds&quot; is passed when clouds percentage is less or equal than 10 returns &quot;Clear weather&quot; in Spanish" file="./spec/requests/weather_es_spec.rb" time="0.009826"></testcase>
+<testcase classname="spec.requests.weather_es_spec" name="WeatherControllerSpec spanish locale temperature when parameter &quot;degrees&quot; is passed when degrees is below zero returns below zero text in Spanish" file="./spec/requests/weather_es_spec.rb" time="0.009932"><failure message="
+expected: {&quot;description&quot;=&gt;&quot;10 grados centígrados bajo cero&quot;}
+     got: {&quot;description&quot;=&gt;&quot;-10 grados centígrados bajo cero&quot;}
+
+(compared using ==)
+
+Diff:
+@@ -1,2 +1,2 @@
+-&quot;description&quot; =&gt; &quot;10 grados centígrados bajo cero&quot;,
++&quot;description&quot; =&gt; &quot;-10 grados centígrados bajo cero&quot;,
+" type="RSpec::Expectations::ExpectationNotMetError">Failure/Error: expect(JSON.parse(response.body)).to eq(expected.stringify_keys)
+
+  expected: {&quot;description&quot;=&gt;&quot;10 grados centígrados bajo cero&quot;}
+       got: {&quot;description&quot;=&gt;&quot;-10 grados centígrados bajo cero&quot;}
+
+  (compared using ==)
+
+  Diff:
+  @@ -1,2 +1,2 @@
+  -&quot;description&quot; =&gt; &quot;10 grados centígrados bajo cero&quot;,
+  +&quot;description&quot; =&gt; &quot;-10 grados centígrados bajo cero&quot;,
+  
+./spec/requests/weather_es_spec.rb:33:in `block (6 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.weather_es_spec" name="WeatherControllerSpec spanish locale temperature when parameter &quot;degrees&quot; is passed when degrees is zero returns above zero text in Spanish" file="./spec/requests/weather_es_spec.rb" time="0.010290"></testcase>
+<testcase classname="spec.requests.weather_es_spec" name="WeatherControllerSpec spanish locale temperature when parameter &quot;degrees&quot; is passed when degrees is above zero returns above zero text in Spanish" file="./spec/requests/weather_es_spec.rb" time="0.009826"></testcase>
+<testcase classname="spec.models.cloud_spec" name="Cloud add some examples to (or delete) /Users/pablo/Documents/Interviews/practice/rails-test/spec/models/cloud_spec.rb" file="./spec/models/cloud_spec.rb" time="0.000016"><skipped/></testcase>
+<testcase classname="spec.models.wind_spec" name="Wind add some examples to (or delete) /Users/pablo/Documents/Interviews/practice/rails-test/spec/models/wind_spec.rb" file="./spec/models/wind_spec.rb" time="0.000010"><skipped/></testcase>
+<testcase classname="spec.requests.weather_spec" name="WeatherControllerSpec when no locale is set clouds returns response in English" file="./spec/requests/weather_spec.rb" time="0.010280"></testcase>
+<testcase classname="spec.requests.weather_spec" name="WeatherControllerSpec when no locale is set temperature returns response in English" file="./spec/requests/weather_spec.rb" time="0.009669"><failure message="
+expected: {&quot;description&quot;=&gt;&quot;10 degrees Celsius below zero&quot;}
+     got: {&quot;description&quot;=&gt;&quot;-10 degrees Celsius below zero&quot;}
+
+(compared using ==)
+
+Diff:
+@@ -1,2 +1,2 @@
+-&quot;description&quot; =&gt; &quot;10 degrees Celsius below zero&quot;,
++&quot;description&quot; =&gt; &quot;-10 degrees Celsius below zero&quot;,
+" type="RSpec::Expectations::ExpectationNotMetError">Failure/Error: expect(JSON.parse(response.body)).to eq(expected.stringify_keys)
+
+  expected: {&quot;description&quot;=&gt;&quot;10 degrees Celsius below zero&quot;}
+       got: {&quot;description&quot;=&gt;&quot;-10 degrees Celsius below zero&quot;}
+
+  (compared using ==)
+
+  Diff:
+  @@ -1,2 +1,2 @@
+  -&quot;description&quot; =&gt; &quot;10 degrees Celsius below zero&quot;,
+  +&quot;description&quot; =&gt; &quot;-10 degrees Celsius below zero&quot;,
+  
+./spec/requests/weather_spec.rb:28:in `block (4 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.requests.weather_spec" name="WeatherControllerSpec when no locale is set wind returns response in English" file="./spec/requests/weather_spec.rb" time="0.009984"><failure message="Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like &quot;redirect_to(...) and return&quot;." type="AbstractController::DoubleRenderError">Failure/Error: render json: wind_response
+
+AbstractController::DoubleRenderError:
+  Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like &quot;redirect_to(...) and return&quot;.
+./app/controllers/weather_controller.rb:24:in `wind&apos;
+./spec/requests/weather_spec.rb:51:in `block (4 levels) in &lt;main&gt;&apos;</failure></testcase>
+<testcase classname="spec.models.temperature_spec" name="Temperature add some examples to (or delete) /Users/pablo/Documents/Interviews/practice/rails-test/spec/models/temperature_spec.rb" file="./spec/models/temperature_spec.rb" time="0.000012"><skipped/></testcase>
+</testsuite>
